@@ -1,3 +1,12 @@
+"""
+This is a portion of code to insert in a given bot. First to import this code in your bot study a bit the official docs.
+I am using a global variable "Giappo_shuffle service" declared as True,
+moreover im using a file named "suffissi-giapponesi.txt" in wich i store all the suffixes the service can assign to the users.
+"""
+
+"""
+Add this as command in a cog or as bot command
+"""
 @commands.command(name='giappo_shuffle',pass_context=True)
     async def _giappo_shuffle(self, ctx: commands.Context, options = ""):
         """
@@ -35,22 +44,17 @@
                                             .add_field(name = "Giappo suffixo shuffle service - {}".format(status[int(Giappo_shuffle_service)]), value = "Non hai il permesso per cambiarlo")))
         except Exception as e:
             print(e)
+
             
+"""
+Add this code in the on_voice_state_update() method in the bot event
+"""           
 @bot.event
 async def on_voice_state_update(member, before, after):
     #when a member joins a channel 
     if before.channel is None and after.channel is not None:
         nickname = member.nick
-        if Nick_shuffle_service:
-            try:
-                with open("nomi.txt","r",encoding="utf-8") as file:
-                    lista_di_nomi = [riga for riga in file]
-                    import random
-                    r_number = random.randint(0, len(lista_di_nomi)-1)
-                    nickname = lista_di_nomi[r_number]
-            except Exception as e:
-                print(e)
-        
+       
         if Giappo_shuffle_service:
             try:
                 with open("suffissi-giapponesi.txt","r",encoding="utf-8") as file:
