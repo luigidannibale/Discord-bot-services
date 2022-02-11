@@ -1,4 +1,10 @@
 """
+This is a portion of code to insert in a given bot. First to import this code in your bot study a bit the official docs.
+I am using a global variable "Nick_shuffle service" declared as True,
+moreover im using a file named "nomi.txt" in wich i store all the names the service can assign to the users.
+"""
+
+"""
 Add this as command in a cog or as bot command
 """
 @commands.command(name='nick_shuffle',pass_context=True)
