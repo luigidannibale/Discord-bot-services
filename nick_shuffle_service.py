@@ -1,6 +1,6 @@
 """
 This is a portion of code to insert in a given bot. First to import this code in your bot study a bit the official docs.
-I am using a global variable "Nick_shuffle service" declared as True,
+I am using a global variable "Nick_shuffle service" declared as True, and a global variable Name_change_role_id = "id=931218456951601685",
 moreover im using a file named "nomi.txt" in wich i store all the names the service can assign to the users.
 """
 
